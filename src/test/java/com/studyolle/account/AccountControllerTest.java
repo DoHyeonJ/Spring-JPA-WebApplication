@@ -1,6 +1,8 @@
 package com.studyolle.account;
 
+import com.studyolle.WithAccount;
 import com.studyolle.domain.Account;
+import com.studyolle.settings.SettingsController;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,11 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.testcontainers.shaded.org.bouncycastle.math.raw.Mod;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -111,6 +118,9 @@ class AccountControllerTest {
         assertNotNull(account.getEmailCheckToken());
         then(javaMailSender).should().send(any(SimpleMailMessage.class));
     }
+
+
+
 
 }
 
