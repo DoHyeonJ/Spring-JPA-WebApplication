@@ -1,4 +1,4 @@
-package com.studyolle.settings.Validator;
+package com.studyolle.settings.validator;
 
 
 import com.studyolle.account.AccountRepository;
